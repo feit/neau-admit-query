@@ -28,4 +28,6 @@ app.post '/query', (req, res) ->
 
 app.use express.static(require('path').join(__dirname, 'public'))
 
-app.listen 80
+port = process.env.PORT or 3000
+app.listen port, ->
+  console.log "server booted, listening #{port}"
