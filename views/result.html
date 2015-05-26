@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="./css/main.css" rel='stylesheet' type='text/css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="title2"><p>录取结果</p></div>
+  <div class="dwarp">
+    <div class="dinside">
+      <div class="dtip">
+        <span>姓名：</span><div class="name"><%=name%></div>
+      </div>
+      <div class="dtip">
+        <span>性别：</span><div class="sex"><%=sex%></div>
+      </div>
+      <div class="dtip">
+        <span>考生号：</span><div class="number"><%=ksh%></div>
+      </div>
+      <div class="dtip">
+        <span>省份：</span><div class="province"><%=province%></div>
+      </div>
+      <% for (var k in info) {%>
+
+        <%if (k) {%>
+          <div class="dtip">
+            <span><%=k%></span><div class="sugrade"><%=info[k]%></div>
+          </div>
+        <%}%>
+      <%}%>
+      <div class="dtip">
+        <span>总分：</span><div class="total"><%=grade%></div>
+      </div>
+      <%if (rank) {%>
+        <div class="dtip">
+          <span>排名：</span><div class="total"><%=rank%></div>
+        </div>
+      <%}%>
+      <%if (bc) {%>
+        <div class="dtip">
+          <span>备注：</span><div class="total"><%=bc%></div>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,448 @@
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* start editing from here */
+a {
+    text-decoration: none;
+}
+
+/* horizontal menu */
+img {
+    max-width: 100%;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/*reset end*/
+/*main start*/
+body {
+    background: url(../images/bg4.jpg) no-repeat center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-size: 100% 100%;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.mains {
+    margin: 2em auto 0;
+    width: 44%;
+/*    background-color: #f00;*/
+    height: auto;
+}
+
+.lable input[type="text"] {
+    padding: 15px;
+    width: 44%;
+    font-size: 1.1em;
+    margin: 18px 0px;
+    color: #626262;
+    float: left;
+    cursor: pointer;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    outline: none;
+    font-weight: 600;
+    margin-left: 3px;
+    background: #ffffff;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border-left: 6px solid #fff;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+}
+
+.lable input[type="text"]:hover, .lable-2 input[type="text"]:hover, input[type="Password"]:hover, #active {
+    color: #666666;
+    border-left: 6px solid #99cd38;
+}
+
+.lable-2 input[type="text"] {
+    padding: 14px;
+    width: 94%;
+    font-size: 1em;
+    margin: 18px 0px 18px 4px;
+    border: none;
+    color: #dcdcdc;
+    cursor: pointer;
+    background: none;
+    float: left;
+    outline: none;
+    font-weight: 700;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border-left: 6px solid #fff;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+}
+
+.submit {
+    padding: 5px 4px;
+    text-align: center;
+}
+
+input[type=submit] {
+    padding: 15px 30px;
+    color: #fff;
+    float: right;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #99cd38;
+    border: 1px solid #99cd38;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    outline: none;
+    width: 100%;
+}
+
+.submit input[type=submit]:hover {
+    background: #40A46F;
+    border: 1px solid #40A46F;
+}
+
+.title {
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.title p {
+    padding: 5px 30px;
+    color: #fff;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 80%;
+    font-size: 20px;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.lable-3 .lableone {
+    padding: 0px 8px;
+    width: 44%;
+    font-size: 1.1em;
+    margin: 0px 0px;
+    color: #DCDCDC;
+    float: left;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    outline: none;
+    font-weight: 600;
+    margin-left: 3px;
+    background: transparent;
+}
+
+.label-5 .inside {
+    padding: 0px;
+    width: 94%;
+    font-size: 1em;
+    margin: 18px 0px 18px 4px;
+    border: none;
+    color: #dcdcdc;
+    cursor: pointer;
+    background: none;
+    float: left;
+    outline: none;
+    font-weight: 700;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: transparent;
+}
+.inside .tefont {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+.tex {
+  padding-right: 10px;
+}
+.tex textarea {
+  outline: none;
+  resize: none;
+  width: 100%;
+  margin-right: 10px;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  border-left: 6px solid #fff;
+  border-bottom: none;
+  border-right: none;
+  border-top: none;
+}
+.tex textarea:hover {
+  border-left: 6px solid #40A46F;
+}
+
+.lableone select {
+  padding: 2px 15px;
+  border-radius: 3px;
+  height: 25px;
+  width: 100px;
+  font-size: 14px;
+}
+.lableone .type {
+    padding: 2px 15px 0px 0px;
+    border-radius: 3px;
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+    display: inline-block;
+}
+.lable-2 {
+   margin-bottom: 10px;
+}
+
+.lableone .type input {
+    margin: 0px 0px 5px 0px;
+    padding-left: 6px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border-left: 2px solid #fff;
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+    color: #DCDCDC;
+    height: 25px;
+    line-height: 25px;
+}
+.lableone .type input:hover {
+    border-left: 4px solid #40A46F;
+    color: #666666;
+}
+.lableone select {
+    width: 60%;
+    height: 40px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #272822;
+ }
+
+.lableone select option {
+  text-indent: 10px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+.lableone label {
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #fff;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+}
+
+.place {
+    height: 40px;
+    width: 100%;
+    background-color: #transparent;
+}
+
+.box {
+    color: #fff;
+    font-size: 14px;
+}
+
+/*indexdetail*/
+.dwarp {
+/*     background-color: #07793D; */
+    width: 80%;
+    margin: 0px auto 10px auto;
+    padding: 10px 0px;
+}
+
+
+.title2 {
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.title2 p {
+    padding: 5px 30px;
+    color: #fff;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 80%;
+    font-size: 25px;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.dtip {
+    margin: 10px 10px;
+    background-color: #fff;
+    height: 28px;
+    font-size: 18px;
+    line-height: 18px;
+    padding-top: 10px;
+    color: #333333;
+    padding-left: 5px;
+}
+
+.dtip span {
+    float: left;
+    padding-left: 5px;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.number {
+    width: 45%;
+    float: left;
+    margin-left: -10px;
+}
+
+.footer_tip {
+    color: #CCA;
+}
+
+.pull-right {
+    float: right;
+}
+
+/*----start-responsive design-----*/
+@media (max-width: 1440px) {
+    .mains {
+        width: 46%;
+        margin: 2em auto 0;
+    }
+}
+
+@media (max-width: 1366px) {
+    .mains {
+        width: 48%;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    .mains {
+        width: 53%;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .mains {
+        width: 66%;
+        margin: 2em auto 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .mains {
+        width: 91%;
+        margin: 2em auto 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .mains {
+        width: 90%;
+        margin: 2em auto 0;
+    }
+
+    .lable input[type="text"]:first-child {
+        width: 92%;
+    }
+    .lable-3 .lableone:first-child {
+        width: 92%;
+    }
+    .lable input[type="text"], .lable input[type="text"],.lable-3 .lableone {
+        width: 92%;
+        font-size: 1em;
+        text-align: left;
+        margin: 10px 0px;
+        margin-left: 0;
+    }
+
+    .lable-2 input[type="text"], .lable-2 input[type="text"], input[type="Password"],.label-5 .inside,.labelselect .lableone1 {
+        width: 92.3%;
+        font-size: 1em;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    input[type=submit] {
+        padding: 15px 15px;
+        font-size: 1em;
+        color: #fff;
+        text-align: center;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .mains {
+        width: 90%;
+        margin: 2em auto 0;
+    }
+
+    .lable input[type="text"], .lable input[type="text"] ,.lable-3 .lableone{
+        width: 92%;
+
+    }
+
+    @media (max-width: 320px) {
+        .mains {
+            width: 90%;
+            margin: 2em auto 0;
+        }
+
+        .lable input[type="text"]:first-child {
+            width: 90%;
+            padding: 13px 10px;
+        }
+        .lable-3 .lableone:first-child {
+            width: 90%;
+            padding: 13px 10px;
+        }
+        .lable input[type="text"], .lable input[type="text"], .lable-2 input[type="text"], .lable-2 input[type="text"],.lable-3 .lableone ,.label-5 .inside,.labelselect .lableone1 {
+            width: 90%;
+            font-size: 16px;
+            padding: 13px 10px;
+        }
+    }
+}
