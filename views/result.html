@@ -37,6 +37,11 @@
           <span>排名：</span><div class="total"><%=rank%></div>
         </div>
       <%}%>
+      <%if (!rank && bc ==='器乐') {%>
+        <div class="dtip">
+          <span>排名：</span><div class="total"><%=rank%></div>
+        </div>
+      <%}%>
       <%if (bc) {%>
         <div class="dtip">
           <span>备注：</span><div class="total"><%=bc%></div>

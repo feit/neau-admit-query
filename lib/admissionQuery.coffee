@@ -52,3 +52,15 @@ module.exports = (name, number, callback) ->
         result.info[dataName] = data.text()
 
       callback null, result
+
+module.exports.getTip = (callback) ->
+  request 'http://zsb.neau.edu.cn/Query.aspx', (err, res, data) ->
+    return callback err if err
+
+    if res?.statusCode isnt 200
+      return callback new Error 'statusCode error'
+
+    $ = cheerio.load data
+    tip = $('.zhujie').text()
+
+    callback null, tip

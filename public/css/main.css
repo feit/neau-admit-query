@@ -275,6 +275,8 @@ input[type=submit] {
     height: 40px;
     width: 100%;
     background-color: #transparent;
+    color: #fff;
+    margin: 20px auto;
 }
 
 .box {

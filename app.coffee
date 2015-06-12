@@ -12,7 +12,11 @@ app.use bodyParser.urlencoded(extended: true)
 app.use bodyParser.json()
 
 app.get '/', (req, res) ->
-  res.render 'query'
+  admissionQuery.getTip (err, tip) ->
+    if err
+      res.render 'query', {errcode: 2, errmsg: '请稍后再试', tip: ''}
+    
+    res.render 'query', {errcode: 0, tip: tip}
 
 app.post '/query', (req, res) ->
   name = req.body.name
@@ -21,7 +25,11 @@ app.post '/query', (req, res) ->
   admissionQuery name, number, (err, result) ->
 
     if err or not result
-      res.render 'query'
+      result =
+        errcode: 1
+        errmsg: '考生号或姓名错误'
+        tip: ''
+      res.render 'query', result
       return
 
     res.render 'result', result
