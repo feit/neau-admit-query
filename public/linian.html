@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>历年分数查询</title>
+  <link rel="stylesheet" href="./css/ratchet.css" type="text/css">
+  <link rel="stylesheet" href="./css/linian.css" type="text/css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+</head>
+<body>
+  <header class="bar bar-nav">
+    <h1 class="title">历年分数查询</h1>
+  </header>
+  <div class="content fixed">
+     <div class="label">
+       <select id="years-opts">
+       </select>
+       <select id="batch-opts">
+       </select>
+     </div>
+     <div class="btncontainter">
+       <button id="query" class="btn btn-primary btn-block">
+         查询
+       </button>
+     </div>
+     <div class="container">
+     </div>
+  </div>
+<script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var currentBatches;
+  $(function () {
+    $.get('/years', function (data) {
+      data.forEach(function (year) {
+        $('#years-opts').append($('<option value="' + year + '">' + year +'年</option>'));
+        $('#years-opts').trigger('change');
+      });
+    }, 'json');
+    $('#years-opts').change(function (e) {
+      var now = $("#years-opts").find("option:checked").val();
+      $.get('/batches?year=' + now, function (data) {
+        currentBatches = data;
+        updateBatch();
+      });
+    });
+
+    $('#query').click(function (e) {
+      var nowBatch = $("#batch-opts").find("option:checked").val();
+      var url = '/detail?url=' + encodeURIComponent(currentBatches[nowBatch].url);
+      $.get(url, function (html) {
+        $('.container').html('');
+        $('.container').prepend(html);
+      });
+    });
+  });
+
+  var updateBatch = function () {
+    $('#batch-opts').html('');
+    currentBatches.forEach(function (batch, i) {
+      if (!batch.name) {
+        return;
+      }
+      $('#batch-opts').append($('<option value="' + i + '">' + batch.name +'</option>'));
+    });
+  };
+
+
+</script>
+</body>
+</html>
