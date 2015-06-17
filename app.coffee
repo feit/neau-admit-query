@@ -70,6 +70,18 @@ app.get '/detail', (req, res) ->
 
     res.end "<table>#{table}</table>"
 
+province = require './attachment/json/province.json'
+province = JSON.stringify province
+app.get '/province', (req, res) ->
+  res.send province
+
+app.get '/province/detail', (req, res) ->
+  provincePY = req.query.province
+
+  provinceDetail = require "./attachment/json/#{provincePY}.json"
+
+  res.json(provinceDetail)
+
 app.use express.static(require('path').join(__dirname, 'public'))
 
 port = process.env.PORT or 3000
