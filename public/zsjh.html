@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>历年分数查询</title>
+  <link rel="stylesheet" href="./css/zhaoshengjihua.css" type="text/css">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+</head>
+<body>
+  <header class="bar bar-nav clearfixall">
+    <h1 class="title">2015招生计划</h1>
+  </header>
+  <div class="content">
+     <div class="select-container">
+       <select id="province-opts">
+       </select>
+     </div>
+     <div class="btn-containter">
+       <button id="query" class="btn btn-primary btn-block">
+         查询
+       </button>
+     </div>
+  </div>
+     <div class="container">
+       <table id="plan-table" cellpadding="0", cellspacing="0" style="width: 575pt; border-collapse: collapse">
+         
+       </table>
+     </div>
+<script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(function () {
+    $.get('/province', function (data) {
+      data.forEach(function (p) {
+        pEle = $('<option value="' + p.pinyin + '">' + p.chinese + '</option>');
+        $('#province-opts').append(pEle);
+      });
+    }, 'json');
+
+    $('#query').click(function (e) {
+      var provincePY = $("#province-opts").find("option:checked").val();
+      var url = '/province/detail?province=' + provincePY;
+      $.get(url, function (data) {
+        $('#plan-table').html('');
+        $('#plan-table').append('<tr><td>专业名称 </td><td>招生计划 </td><td>录取批次 </td><td>招生科类 </td><td>学制 </td><td>年度学费 </td><td>备注</td></tr>');
+        data.forEach(function (item) {
+          var iele = $('<tr><td>'+ item.zydhmc +'</td><td>'+ item.zsjhs +'</td><td>'+ item.pcmc +'</td><td>'+ item.klmc +'</td><td>'+  item.xzmc +'</td><td>'+ item.sfbz +'</td><td>'+ item.bz +'</td></tr>');
+          $('#plan-table').append(iele);
+        });
+      }, 'json');
+    });
+
+  });
+</script>
+</body>
+</html>
