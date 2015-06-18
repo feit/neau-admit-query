@@ -15,11 +15,6 @@
        <select id="province-opts">
        </select>
      </div>
-     <div class="btn-containter">
-       <button id="query" class="btn btn-primary btn-block">
-         查询
-       </button>
-     </div>
   </div>
      <div class="container">
        <table id="plan-table" cellpadding="0", cellspacing="0" style="width: 575pt; border-collapse: collapse">
@@ -34,10 +29,14 @@
         pEle = $('<option value="' + p.pinyin + '">' + p.chinese + '</option>');
         $('#province-opts').append(pEle);
       });
+      updateTable();
     }, 'json');
 
-    $('#query').click(function (e) {
+    $('#province-opts').on('change', updateTable);
+
+    function updateTable (e) {
       var provincePY = $("#province-opts").find("option:checked").val();
+      console.log(provincePY);
       var url = '/province/detail?province=' + provincePY;
       $.get(url, function (data) {
         $('#plan-table').html('');
@@ -47,7 +46,7 @@
           $('#plan-table').append(iele);
         });
       }, 'json');
-    });
+    };
 
   });
 </script>

@@ -24,30 +24,7 @@ header {
 
 .container {
   width: 100%;
-  left: 0;
-  right: 0;
-  margin: 10px auto;
-}
-
-.container table {
-  margin: 10px 15px;
-}
-
-.container table tr td {
-  padding: 2px;
-  margin: 5px 5px;
-  background-color: #dfdfdf;
-  border: 3px #fff solid;
-}
-
-.container table tbody tr:first-child td {
-  background-color: #85bbe1 !important;
-  color: #fff;  
-}
-
-.container table  tbody tr td {
-  background-color: #dfdfdf !important;
-  border: 1px #fff solid !important;
+  padding: 10px 0;
 }
 
 .select-container {
@@ -114,11 +91,4 @@ select {
 
 .btn-containter .btn:hover {
   background-color: #428bca;
-}
-
-.wrap-content {
-  
-}
-.container {
-  margin: 70px 20px 20px 20px;
 }

@@ -78,9 +78,36 @@ app.get '/province', (req, res) ->
 app.get '/province/detail', (req, res) ->
   provincePY = req.query.province
 
+  unless provincePY
+    return res.json({errcode: 1})
+
   provinceDetail = require "./attachment/json/#{provincePY}.json"
 
+  unless provinceDetail
+    return res.json({errcode: 2})
+
   res.json(provinceDetail)
+
+collegeInfos = null
+app.get '/college/info/all', (req, res) ->
+  if collegeInfos
+    return res.json(collegeInfos)
+  
+  fetchGrade.getMajorInfo (err, info) ->
+    collegeInfos = info
+    res.json(collegeInfos)
+
+app.get '/college/major/info', (req, res) ->
+  url = req.query.url
+
+  unless url
+    return res.json {errcode: 1}
+
+  fetchGrade.getMajorInfoDetail url, (err, detail) ->
+    if err
+      return res.json {errcode: 2}
+
+    res.send detail
 
 app.use express.static(require('path').join(__dirname, 'public'))
 
