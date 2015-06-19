@@ -25,6 +25,16 @@ header {
 .container {
   width: 100%;
   padding: 10px 0;
+  margin-top: -50px;
+}
+
+.container span {
+  padding: 0px 20px;
+}
+
+.container span p {
+  margin: auto 20px;
+  line-height: 2;
 }
 
 .select-container {
@@ -68,7 +78,7 @@ select {
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 3px;
-  width: 100%;
+  width: 47%;
   height: 100%;
   font-size: 18px;
   background-color: #85bbe1;
@@ -91,4 +101,14 @@ select {
 
 .btn-containter .btn:hover {
   background-color: #428bca;
+}
+
+#look-college {
+ float: left;
+ margin-right: 2px;
+}
+
+#look-major {
+ float: right;
+ margin-left: 2px;
 }
