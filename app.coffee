@@ -1,6 +1,7 @@
 express = require 'express'
 bodyParser = require 'body-parser'
 admissionQuery = require './lib/admissionQuery'
+gkAdmissionQuery = require './lib/gkAdmissionQuery'
 fetchGrade = require './lib/fetch'
 module.exports = app = express()
 
@@ -33,6 +34,29 @@ app.post '/query', (req, res) ->
       return
 
     res.render 'result', result
+
+app.get '/gaokao', (req, res) ->
+  admissionQuery.getTip (err, tip) ->
+    if err
+      res.render 'gk_query', {errcode: 2, errmsg: '请稍后再试', tip: ''}
+
+    res.render 'gk_query', {errcode: 0, tip: tip}
+
+app.post '/gaokao/query', (req, res) ->
+  name = req.body.name
+  number = req.body.number
+
+  gkAdmissionQuery name, number, (err, result) ->
+
+    if err or not result
+      result =
+        errcode: 1
+        errmsg: '考生号或姓名错误1'
+        tip: ''
+      res.render 'gk_query', result
+      return
+
+    res.render 'gk_result', result
 
 globalYears = null
 app.get '/years', (req, res) ->

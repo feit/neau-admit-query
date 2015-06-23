@@ -1,0 +1,124 @@
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* start editing from here */
+a {
+    text-decoration: none;
+}
+
+/* horizontal menu */
+img {
+    max-width: 100%;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/*reset end*/
+/*main start*/
+body {
+  background-color: #b21b1b;
+}
+
+.title {
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.title p {
+    padding: 5px 30px;
+    color: #fff;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 80%;
+    font-size: 20px;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/*indexdetail*/
+.dwarp {
+/*     background-color: #07793D; */
+    width: 80%;
+    margin: 0px auto 10px auto;
+    padding: 10px 0px;
+}
+
+.title2 {
+  padding: 0px 4px;
+  text-align: center;
+}
+
+.title2 p {
+    padding: 5px 30px;
+    color: #fff;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    width: 80%;
+    font-size: 25px;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-top: 15px;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.dtip {
+    margin: 10px 10px;
+    background-color: transparent;
+    height: 100%;
+    font-size: 18px;
+    line-height: 18px;
+    padding-top: 10px;
+    color: #fff;
+    padding-left: 5px;
+    line-height: 2;
+}
+
+.number {
+    width: 45%;
+    float: left;
+    margin-left: -10px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.tip {
+    text-align: right;
+    font-size: 18px;
+}
+
+.alertWord {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 1;
+}

@@ -7,17 +7,23 @@
 </head>
 <body>
 <div class="mains clearfix">
-    <form>
-        <div class="title"><p>东北农业大学艺术录取查询系统</p></div>
+    <form method="POST" action="/gaokao/query">
+        <div class="title"><p>东北农业大学录取查询系统</p></div>
         <div class="lable clearfix">
-            <input type="text" class="text" placeholder="考生号">
+            <input type="text" class="text" name="number" placeholder="考生号">
 
-            <input type="text" class="text" placeholder="考生姓名">
+            <input type="text" class="text" name="name" placeholder="考生姓名">
         </div>
         <div class="submit clearfix">
             <input type="submit" onclick="" value="确认">
         </div>
     </form>
-    <div class="place"></div>
+    <div class="place"><%=tip%></div>
 </body>
+
+<% if (errcode) {%>
+<script type="text/javascript">
+    alert("<%=errmsg%>")
+</script>
+<%}%>
 </html>
