@@ -1,7 +1,7 @@
 {
     "apps":[{
         "name": "neau-adit-query",
-        "cwd": "/src/neau-admit-query/",
+        "cwd": "/src/",
         "script": "./app.coffee",
         "watch": false,
         "exec_interpreter": "./node_modules/.bin/coffee",
