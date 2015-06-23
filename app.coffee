@@ -111,7 +111,7 @@ app.get '/college/major/info', (req, res) ->
 
 app.use express.static(require('path').join(__dirname, 'public'))
 
-port = process.env.PORT or 3000
+port = process.env.PORT or 80
 app.listen port, ->
   console.log "server booted, listening #{port}"
 

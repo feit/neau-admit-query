@@ -1,0 +1,14 @@
+{
+    "apps":[{
+        "name": "neau-adit-query",
+        "cwd": "/src/neau-admit-query/",
+        "script": "./app.coffee",
+        "watch": false,
+        "exec_interpreter": "./node_modules/.bin/coffee",
+        "exec_mode": "fork",
+        "env": {
+            "NODE_ENV":"production",
+            "PORT":80
+        }
+    }]
+}
