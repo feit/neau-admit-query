@@ -12,10 +12,10 @@
   </header>
   <div class="content">
      <div class="select-container">
-       <select id="college-opts">
-       </select>
-       <select id="major-opts">
-       </select>
+        <select id="major-opts">
+        </select>
+        <select id="college-opts">
+        </select>
      </div>
      <div class="btn-containter">
        <button id="look-college" class="btn btn-primary btn-block">
@@ -34,15 +34,13 @@
   $(function () {
     $.get('/college/info/all', function (data) {
       collegeInfos = data;
-      data.forEach(function (college) {
-        $('#college-opts').append($('<option value="' + college.collegeName + '">' + college.collegeName +'</option>'));
-      });
-      $('#college-opts').trigger('change');
+      renderMajors();
+      $('#major-opts').trigger('change');
     }, 'json');
 
-    $('#college-opts').on('change', function () {
-      var college = findCollege($("#college-opts").find("option:checked").val());
-      updateMajors(college.majors);
+    $('#major-opts').on('change', function () {
+      var majorName = $("#major-opts").find("option:checked").val();
+      renderCollege(majorName);
     });
 
     $('#look-college').click(function () {
@@ -62,12 +60,24 @@
     });
   });
 
-  function updateMajors (majors) {
-    $('#major-opts').html('');
-    majors.forEach(function (major) {
-      $('#major-opts').append($('<option value="' + major.majorName + '">' + major.majorName +'</option>'));
+  function renderMajors () {
+    collegeInfos.forEach(function (college) {
+      college.majors.forEach(function (major) {
+        $('#major-opts').append($('<option value="' + major.majorName + '">' + major.majorName +'</option>'));
+      });
     });
-  };
+  }
+
+  function renderCollege (majorName) {
+    collegeInfos.forEach(function (college) {
+      college.majors.forEach(function (major) {
+        if (major.majorName === majorName) {
+          $('#college-opts').html('');
+          $('#college-opts').append($('<option value="' + college.collegeName + '">' + college.collegeName +'</option>'));
+        }
+      });
+    });
+  }
 
   function findCollege (collegeName) {
     var result;
